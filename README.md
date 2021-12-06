@@ -23,6 +23,12 @@ The second makes us able to transform the XML provided by CEFS into a an updatei
 This then upload to an S3 bucket specified with `S3_URI` env variable
 
 ## Manual Build instruction 
+
+```
+git clone https://github.com/loitho/katello-create-errata.git
+cd katello-create-errata
+```
+
 ### If you're behind a proxy
 
 ```
