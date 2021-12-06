@@ -22,7 +22,9 @@ The second makes us able to transform the XML provided by CEFS into a an updatei
 
 This then upload to an S3 bucket specified with `S3_URI` env variable
 
-## Manual Build instruction (you don't need the "proxy" variables if you have direct access to the internet) 
+## Manual Build instruction 
+### If you're behind a proxy
+
 ```
 docker build --build-arg HTTP_PROXY=http://xxxxxx:8080  \
              --build-arg HTTPS_PROXY=http://xxxxxx:8080 \
@@ -31,6 +33,10 @@ docker build --build-arg HTTP_PROXY=http://xxxxxx:8080  \
              --build-arg NO_PROXY="localhost,127.0.0.1,169.254.169.254,10.0.0.0/8,172.16.0.0/12,.internal,.svc,.amazonaws.com" \
              --build-arg no_proxy="localhost,127.0.0.1,169.254.169.254,10.0.0.0/8,172.16.0.0/12,.internal,.svc,.amazonaws.com" \
              --build-arg S3_URI="s3://yourrepository" .
+```
+### If you're not using a proxy : 
+```
+docker build --build-arg S3_URI="s3://yourrepository" .
 ```
 
 ## How to run as webserver
