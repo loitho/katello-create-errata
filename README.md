@@ -5,7 +5,7 @@ Create RPM repository containing Errata for Foreman to sync and provide to clien
 ## How to use 
 
 - Provide an S3_URI in the form at build time: `S3_URI=s3://yourbucket/` 
-- When the docker image is being built it will upload the generated errata files into the specified S3 Bucket
+- When the docker image is being built it will upload the generated errata files into the specified S3 Bucket, you can then use the S3 HTTPS URL as the repository URL for Katello
 - You can also comment the end of the file and when you spawn a container from the image, you'll have a webserver providing yum repositories for EL 5/6/7/8 under the "errata5/6/7/8" folder
 
 ## What
